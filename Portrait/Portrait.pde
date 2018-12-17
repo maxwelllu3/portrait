@@ -12,17 +12,17 @@ void setup() {
   // WIDTH,HEIGHT
   size(550, 550); 
 
- // create the empty PDF output file
-    vectorImage = createGraphics(width, height, PDF, "output.pdf");  
-    
-    // start drawing to the PDF file
-    vectorImage.beginDraw();
+  // create the empty PDF output file
+  vectorImage = createGraphics(width, height, PDF, "output.pdf");  
+
+  // start drawing to the PDF file
+  vectorImage.beginDraw();
 
   // drawing characteristics for shapes
-    noFill();
-    vectorImage.noFill();
-    strokeWeight(1); // 1 pixel border
-    background(255); // white background
+  noFill();
+  vectorImage.noFill();
+  strokeWeight(1); 
+  background(255); 
 
   // load image from the folder
   source = loadImage("maxwell.JPG");
@@ -43,7 +43,7 @@ void setup() {
 
 
     if ((x > 0) && (y > 0) && (y % 10 == 0) && (x % 10 == 0)) {
-      
+
       // draw an ellipse at position of current pixel
       ellipse(x, y, diameter, diameter);
       vectorImage.ellipse(x, y, diameter, diameter);
@@ -52,19 +52,22 @@ void setup() {
 }
 
 void draw() {
-  
+
   // stop the loop
   noLoop();
 }
 
 void keyPressed() {
-    // stop the program and exit
-    if (key == 's') {
-      // stop drawing to the PDF
-      vectorImage.endDraw();
-      vectorImage.dispose();
-      vectorImage = null;
-      // exit the program
-      exit();
-    }
+
+  // stop the program and exit
+  if (key == 's') {
+
+    // stop drawing to the PDF
+    vectorImage.endDraw();
+    vectorImage.dispose();
+    vectorImage = null;
+
+    // exit the program
+    exit();
   }
+}
