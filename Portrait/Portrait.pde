@@ -4,7 +4,7 @@ void setup() {
 
   // create the canvas
   // WIDTH,HEIGHT
-  size(750, 750); 
+  size(550, 550); 
 
   // make the backgound white
   background(255);
@@ -13,8 +13,8 @@ void setup() {
   source = loadImage("maxwell.JPG");
   source.loadPixels();
 
-  // loop from first pixel to final pixel, image width * height - 1 ex. 750*750=562500,-1=562499
-  for (int position = 0; position <= 562499; position += 1) {
+  // loop from first pixel to final pixel, image width * height - 1 ex. 550*550=302500,-1=302499
+  for (int position = 0; position <= 302499; position += 1) {
 
     // get brightness of current pixel
     float b = brightness(source.pixels[position]);
